@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed Hero Section Recreation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom utility for the specific lime green color */
+        .bg-seed-lime {
+            background-color: #EAF3D3;
+        }
+        .text-seed-dark {
+            color: #1A3118;
+        }
+        .bg-seed-badge {
+            background-color: #D0F26D;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 antialiased">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-seed-lime text-seed-dark text-xs font-medium py-2.5 text-center tracking-wide relative z-50">
+        Is DS-01® Daily Synbiotic Right For You? <span class="ml-1">→</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="absolute top-[40px] left-0 w-full z-40 px-6 py-5 flex justify-between items-center">
+        <div class="flex items-center">
+            <!-- Logo -->
+            <a href="#" class="text-white text-2xl font-semibold tracking-tight flex items-center gap-1 mr-10 group">
+                Seed<span class="w-2.5 h-2.5 bg-white rounded-full mt-1 group-hover:scale-110 transition-transform"></span>
+            </a>
+            
+            <!-- Left Links (Desktop) -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-white text-sm font-medium hover:opacity-80 transition-opacity">Shop</a>
+                <a href="#" class="text-white text-sm font-medium hover:opacity-80 transition-opacity">Science</a>
+                <a href="#" class="text-white text-sm font-medium hover:opacity-80 transition-opacity">Learn</a>
+            </div>
+        </div>
+
+        <!-- Right Links -->
+        <div class="flex items-center gap-6">
+            <a href="#" class="text-white text-sm font-medium hover:opacity-80 transition-opacity hidden sm:block">Login</a>
+            <a href="#" class="bg-white text-black px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors">
+                Get Started
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="relative w-full h-[calc(100vh-40px)] overflow-hidden bg-gray-300">
+        
+        <!-- Background Image Placeholder -->
+        <!-- Using a placeholder that mimics the color palette of the original screenshot (greens/grays) -->
+        <img 
+            src="https://placehold.co/1920x1080/8fa398/222222?text=Background+Video+Placeholder" 
+            alt="Seed Products Background" 
+            class="absolute inset-0 w-full h-full object-cover"
+        >
+        
+        <!-- Gradient Overlay for Text Readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+
+        <!-- Main Content -->
+        <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 lg:p-16 pb-16 md:pb-20 flex flex-col items-start z-30">
+            
+            <!-- "New" Badge -->
+            <div class="bg-seed-badge text-black text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-6">
+                New
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-white text-4xl md:text-5xl lg:text-[64px] font-normal leading-[1.1] tracking-tight mb-4 max-w-4xl">
+                Nutrition, energy, and sleep—<br class="hidden md:block" />
+                advanced by microbiome science
+            </h1>
+
+            <!-- Subtext -->
+            <p class="text-white/90 text-base md:text-lg font-light max-w-md leading-relaxed mb-8">
+                Seed's Co-Biotics nourish you and your microbiome to deliver targeted, daily benefits.
+            </p>
+
+            <!-- CTA Button -->
+            <a href="#" class="bg-white text-black px-9 py-3.5 rounded-full text-sm md:text-base font-medium hover:bg-gray-100 transition-colors inline-block">
+                Shop Now
+            </a>
+        </div>
+
+        <!-- Pause Button (Bottom Right) -->
+        <button class="absolute bottom-8 right-8 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/30 transition-colors z-30 group">
+            <div class="flex gap-1">
+                <div class="w-0.5 h-3 bg-white/90 rounded-full"></div>
+                <div class="w-0.5 h-3 bg-white/90 rounded-full"></div>
+            </div>
+        </button>
+
+    </main>
+
+</body>
+</html>
