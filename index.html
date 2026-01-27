@@ -3,105 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seed Hero Section Recreation</title>
+    <title>Seed Hero Recreation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'seed-lime': '#cbf29a',
+                        'seed-cream': '#f8f8f4',
+                        'seed-green': '#15321e',
+                        'seed-dark': '#0f2615',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
+        /* Custom underline style for the link */
+        .link-underline {
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 2px;
+        }
         body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Custom utility for the specific lime green color */
-        .bg-seed-lime {
-            background-color: #EAF3D3;
-        }
-        .text-seed-dark {
-            color: #1A3118;
-        }
-        .bg-seed-badge {
-            background-color: #D0F26D;
+            background-color: #f8f8f4;
+            color: #15321e;
         }
     </style>
 </head>
-<body class="m-0 p-0 antialiased">
+<body class="antialiased min-h-screen flex flex-col relative pb-4">
 
     <!-- Top Announcement Bar -->
-    <div class="bg-seed-lime text-seed-dark text-xs font-medium py-2.5 text-center tracking-wide relative z-50">
-        Is DS-01® Daily Synbiotic Right For You? <span class="ml-1">→</span>
+    <div class="bg-seed-lime w-full py-2.5 text-center text-[11px] md:text-xs font-medium tracking-wide text-seed-green cursor-pointer hover:underline">
+        Is DS-01<sup class="text-[8px]">®</sup> Daily Synbiotic Right For You? &rarr;
     </div>
 
     <!-- Navigation -->
-    <nav class="absolute top-[40px] left-0 w-full z-40 px-6 py-5 flex justify-between items-center">
-        <div class="flex items-center">
+    <nav class="w-full px-6 py-5 md:px-12 flex justify-between items-center bg-seed-cream sticky top-0 z-50">
+        <div class="flex items-center gap-10">
             <!-- Logo -->
-            <a href="#" class="text-white text-2xl font-semibold tracking-tight flex items-center gap-1 mr-10 group">
-                Seed<span class="w-2.5 h-2.5 bg-white rounded-full mt-1 group-hover:scale-110 transition-transform"></span>
+            <a href="#" class="text-2xl font-bold tracking-tight flex items-baseline gap-1 text-seed-green">
+                Seed<span class="w-2.5 h-2.5 bg-seed-green rounded-full"></span>
             </a>
             
-            <!-- Left Links (Desktop) -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#" class="text-white text-sm font-medium hover:opacity-80 transition-opacity">Shop</a>
-                <a href="#" class="text-white text-sm font-medium hover:opacity-80 transition-opacity">Science</a>
-                <a href="#" class="text-white text-sm font-medium hover:opacity-80 transition-opacity">Learn</a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 text-sm font-medium text-seed-green/90">
+                <a href="#" class="hover:opacity-70 transition-opacity">Shop</a>
+                <a href="#" class="hover:opacity-70 transition-opacity">Science</a>
+                <a href="#" class="hover:opacity-70 transition-opacity">Learn</a>
             </div>
         </div>
 
-        <!-- Right Links -->
-        <div class="flex items-center gap-6">
-            <a href="#" class="text-white text-sm font-medium hover:opacity-80 transition-opacity hidden sm:block">Login</a>
-            <a href="#" class="bg-white text-black px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors">
+        <!-- Right Menu -->
+        <div class="flex items-center gap-6 md:gap-8">
+            <a href="#" class="text-sm font-medium text-seed-green/90 hover:opacity-70 transition-opacity hidden sm:block">Login</a>
+            <a href="#" class="bg-seed-green text-white text-xs md:text-sm font-medium px-5 py-2.5 rounded-full hover:bg-opacity-90 transition-all">
                 Get Started
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <main class="relative w-full h-[calc(100vh-40px)] overflow-hidden bg-gray-300">
-        
-        <!-- Background Image Placeholder -->
-        <!-- Using a placeholder that mimics the color palette of the original screenshot (greens/grays) -->
-        <img 
-            src="https://placehold.co/1920x1080/8fa398/222222?text=Background+Video+Placeholder" 
-            alt="Seed Products Background" 
-            class="absolute inset-0 w-full h-full object-cover"
-        >
-        
-        <!-- Gradient Overlay for Text Readability -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
-
-        <!-- Main Content -->
-        <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 lg:p-16 pb-16 md:pb-20 flex flex-col items-start z-30">
+    <main class="flex-grow flex items-center justify-center px-6 md:px-12 py-8 md:py-16 max-w-[1600px] mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
             
-            <!-- "New" Badge -->
-            <div class="bg-seed-badge text-black text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-6">
-                New
+            <!-- Left Content -->
+            <div class="flex flex-col items-start max-w-xl">
+                
+                <!-- Badge/Label -->
+                <div class="flex items-center gap-3 mb-6 md:mb-8">
+                    <span class="border border-seed-green/40 rounded-full px-2 py-0.5 text-[10px] font-medium tracking-wider uppercase">
+                        DS-01<sup class="text-[6px]">®</sup>
+                    </span>
+                    <span class="text-lg md:text-xl text-seed-green font-normal">Daily Synbiotic</span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="text-5xl md:text-[4rem] lg:text-[4.5rem] leading-[1.05] font-medium text-seed-green mb-6 md:mb-8 tracking-tight">
+                    A healthy gut can change your life.
+                </h1>
+
+                <!-- Subtext -->
+                <p class="text-base md:text-lg leading-relaxed text-seed-green/80 mb-8 md:mb-10 max-w-md">
+                    Our capsule-in-capsule technology delivers the right probiotic strains to the right places to ease bloating, gas, and irregularity.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
+                    <a href="#" class="bg-seed-green text-white text-sm md:text-base font-medium px-8 py-4 rounded-full hover:bg-opacity-90 transition-all inline-flex items-center">
+                        Shop DS-01<sup class="text-[8px] ml-0.5">®</sup>
+                    </a>
+                    
+                    <a href="#" class="group flex items-center gap-1 text-seed-green font-medium text-sm md:text-base">
+                        <span class="link-underline group-hover:border-seed-green/50 transition-colors">Take The Quiz</span>
+                        <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
             </div>
 
-            <!-- Headline -->
-            <h1 class="text-white text-4xl md:text-5xl lg:text-[64px] font-normal leading-[1.1] tracking-tight mb-4 max-w-4xl">
-                Nutrition, energy, and sleep—<br class="hidden md:block" />
-                advanced by microbiome science
-            </h1>
-
-            <!-- Subtext -->
-            <p class="text-white/90 text-base md:text-lg font-light max-w-md leading-relaxed mb-8">
-                Seed's Co-Biotics nourish you and your microbiome to deliver targeted, daily benefits.
-            </p>
-
-            <!-- CTA Button -->
-            <a href="#" class="bg-white text-black px-9 py-3.5 rounded-full text-sm md:text-base font-medium hover:bg-gray-100 transition-colors inline-block">
-                Shop Now
-            </a>
+            <!-- Right Content (Image) -->
+            <div class="relative w-full flex justify-center lg:justify-end">
+                <!-- Using placeholder image to represent the capsule visual -->
+                <img src="https://placehold.co/800x800/f8f8f4/15321e?text=Capsule+Visual" 
+                     alt="DS-01 Daily Synbiotic Capsule" 
+                     class="w-full max-w-md lg:max-w-full h-auto object-contain mix-blend-multiply">
+            </div>
         </div>
-
-        <!-- Pause Button (Bottom Right) -->
-        <button class="absolute bottom-8 right-8 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/30 transition-colors z-30 group">
-            <div class="flex gap-1">
-                <div class="w-0.5 h-3 bg-white/90 rounded-full"></div>
-                <div class="w-0.5 h-3 bg-white/90 rounded-full"></div>
-            </div>
-        </button>
-
     </main>
+
+    <!-- Bottom Dark Strip (Peeking footer) -->
+    <div class="absolute bottom-0 left-0 w-full h-3 md:h-4 bg-seed-dark rounded-t-[2rem]"></div>
 
 </body>
 </html>
